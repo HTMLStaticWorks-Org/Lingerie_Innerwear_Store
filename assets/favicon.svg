@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <!-- Background circular gradient matching the website logo container -->
+    <linearGradient id="bgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#572B3A" />
+      <stop offset="50%" stop-color="#C88F91" />
+      <stop offset="100%" stop-color="#E8D8C7" />
+    </linearGradient>
+    
+    <!-- Monogram V gradients -->
+    <linearGradient id="vOuter" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#F8F4EF" />
+      <stop offset="100%" stop-color="#572B3A" />
+    </linearGradient>
+    <linearGradient id="vInner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E8D8C7" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#252326" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Circular Base Badge -->
+  <circle cx="50" cy="50" r="49" fill="url(#bgGrad)" />
+
+  <!-- Outer dashed decorative luxury ring -->
+  <circle cx="50" cy="50" r="42" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="2.5 3" opacity="0.65" />
+  
+  <!-- Inner fine accent ring -->
+  <circle cx="50" cy="50" r="37" stroke="#E8D8C7" stroke-width="0.8" opacity="0.45" />
+
+  <!-- Stylized Monogram V with fluid innerwear curves -->
+  <g filter="url(#shadow)">
+    <path d="M28 26 C33 36, 44 65, 50 78 C56 65, 67 36, 72 26 C66 32, 59 44, 50 62 C41 44, 34 32, 28 26 Z" fill="url(#vOuter)"/>
+    <!-- Fluid sensual contour ribbon inner V -->
+    <path d="M38 32 C43 45, 50 56, 50 56 C50 56, 57 45, 62 32 C58 37, 54 44, 50 49 C46 44, 42 37, 38 32 Z" fill="url(#vInner)"/>
+    <!-- Delicate center gem diamond -->
+    <polygon points="50,17 53.5,22 50,27 46.5,22" fill="#FFFFFF"/>
+  </g>
+</svg>

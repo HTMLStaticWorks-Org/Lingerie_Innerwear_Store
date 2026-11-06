@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELORA | The Atelier Story & Haute Innerwear Heritage</title>
+  <meta name="description" content="Discover the story of VELORA. Born in Paris, dedicated to perfecting the art of second-skin intimate apparel through pure Mulberry silk, Austrian Lenzing MicroModal, and anatomical architecture.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            velora: {
+              ivory: '#F8F4EF',
+              champagne: '#E8D8C7',
+              rose: '#C88F91',
+              burgundy: '#572B3A',
+              charcoal: '#252326',
+              white: '#FFFFFF',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body class="overflow-x-hidden bg-velora-ivory text-velora-charcoal dark:bg-[#1a181b] dark:text-velora-ivory antialiased selection:bg-velora-rose/30">
+
+  <!-- =========================================================================
+       SHARED HEADER & LUXURY NAVIGATION
+       ========================================================================= -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-header border-b border-velora-champagne/40 dark:border-velora-burgundy/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between gap-4">
+        
+                <!-- Brand Logo & Symbol -->
+        <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
+            <img src="assets/logo.svg" alt="VELORA Emblem" class="w-full h-full object-contain filter invert-0" />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-lg sm:text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors leading-none">VELORA</span>
+            <span class="text-[7px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 mt-0.5 sm:-mt-1 font-medium hidden sm:block">ATELIER PRIVÉ</span>
+          </div>
+        </a>
+
+                                        <!-- Desktop Navigation Links -->
+        <nav class="hidden xl:flex items-center gap-4 xl:gap-7 text-xs uppercase tracking-wider xl:tracking-widest font-medium">
+          <a href="index.html" class="nav-link text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition py-1">Home 1</a>
+          <a href="home-2.html" class="nav-link text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition py-1">Home 2</a>
+          <a href="about.html" class="nav-link active text-velora-burgundy dark:text-velora-rose font-semibold transition py-1">About</a>
+          <a href="products.html" class="nav-link text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition py-1">Products</a>
+          <a href="size-guide.html" class="nav-link text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition py-1">Size Guide</a>
+          <a href="contact.html" class="nav-link text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition py-1">Contact</a>
+        </nav>
+
+                        <!-- Header Actions: Search, Wishlist, Cart, Theme Toggle, RTL Toggle, Mobile Hamburger -->
+        <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+          
+          <!-- Search Button (Desktop >= 1280px) -->
+          <button class="search-modal-trigger hidden xl:inline-flex p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-full hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 shrink-0" title="Search Collection">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Wishlist Button (Desktop >= 1280px) -->
+          <a href="products.html" class="relative hidden xl:inline-flex p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-full hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 shrink-0" title="Wishlist">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+            <span class="wishlist-badge-count hidden absolute top-1 right-1 w-4 h-4 rounded-full bg-velora-rose text-white text-[10px] font-bold flex items-center justify-center">0</span>
+          </a>
+
+          <!-- Cart Drawer Trigger Button (Desktop >= 1280px) -->
+          <button class="cart-drawer-trigger relative hidden xl:inline-flex p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-full hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 shrink-0" title="Shopping Bag">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span class="cart-badge-count hidden absolute top-1 right-1 w-4 h-4 rounded-full bg-velora-burgundy dark:bg-velora-rose text-white dark:text-velora-charcoal text-[10px] font-bold flex items-center justify-center">0</span>
+          </button>
+
+          <!-- Theme Toggle (Desktop >= 1280px) -->
+          <button class="theme-toggle-btn hidden xl:inline-flex p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-full hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 shrink-0" title="Toggle Theme">
+            <i data-lucide="moon" class="theme-icon-moon w-5 h-5"></i>
+            <i data-lucide="sun" class="theme-icon-sun w-5 h-5 hidden"></i>
+          </button>
+
+          <!-- RTL Toggle (Desktop >= 1280px) -->
+          <button class="rtl-toggle-btn hidden xl:inline-flex p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-full hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 shrink-0" title="Toggle RTL Layout">
+            <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Primary CTA Sign Up (Desktop >= 1280px) -->
+          <a href="signup.html" class="hidden xl:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-velora-burgundy text-white hover:bg-velora-rose dark:bg-velora-rose dark:text-velora-charcoal dark:hover:bg-velora-champagne text-xs font-semibold uppercase tracking-wider transition duration-300 shadow-sm hover:shadow shrink-0" title="Sign Up for VELORA Privé">
+            <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+            <span>Sign Up</span>
+          </a>
+
+          <!-- Mobile / Tablet / 1024px Hamburger Toggle -->
+          <button id="mobile-menu-toggle" class="xl:hidden p-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-full shrink-0 flex items-center justify-center" title="Open Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       SECTION 1: CINEMATIC EDITORIAL HERO
+       ========================================================================= -->
+  <section class="relative min-h-[85vh] flex items-center pt-28 pb-16 overflow-hidden">
+    <!-- Ambient ambient glow -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-velora-champagne/40 dark:bg-velora-burgundy/20 filter blur-3xl opacity-70"></div>
+    <div class="absolute bottom-10 -right-24 w-96 h-96 rounded-full bg-velora-rose/20 dark:bg-velora-rose/10 filter blur-3xl opacity-50"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Editorial Column -->
+        <div class="lg:col-span-7 space-y-6 text-left" data-aos="fade-right" data-aos-duration="1000">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-velora-rose/40 bg-velora-rose/10 text-velora-burgundy dark:text-velora-rose text-xs uppercase tracking-widest font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-velora-rose animate-ping"></span>
+            The Atelier Story • Founded in Paris
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.08] text-velora-charcoal dark:text-velora-ivory">
+            The Art of<br>
+            <span class="italic font-light text-velora-rose dark:text-velora-champagne">Second-Skin Luxury.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-velora-charcoal/80 dark:text-velora-ivory/80 max-w-xl font-light leading-relaxed">
+            Conceived along the historic ateliers of Place Vendôme, VELORA was created to challenge the compromises of conventional innerwear. We believe the first garment touching your body should be an absolute masterpiece of tactile serenity.
+          </p>
+
+          <!-- Key Craft Metrics Strip -->
+          <div class="pt-4 grid grid-cols-3 gap-6 border-t border-velora-champagne/60 dark:border-velora-burgundy/40 text-xs">
+            <div>
+              <span class="block font-serif text-2xl sm:text-3xl font-normal text-velora-burgundy dark:text-velora-champagne">200+</span>
+              <span class="text-stone-500 dark:text-stone-400 mt-1 block">Anatomical Fit Prototypes</span>
+            </div>
+            <div>
+              <span class="block font-serif text-2xl sm:text-3xl font-normal text-velora-burgundy dark:text-velora-champagne">0.4 mm</span>
+              <span class="text-stone-500 dark:text-stone-400 mt-1 block">Ultrathin Bonded Seams</span>
+            </div>
+            <div>
+              <span class="block font-serif text-2xl sm:text-3xl font-normal text-velora-burgundy dark:text-velora-champagne">6A Grade</span>
+              <span class="text-stone-500 dark:text-stone-400 mt-1 block">Pure Mulberry Silk Purity</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="products.html" class="whitespace-nowrap shrink-0 w-full sm:w-[245px] px-6 py-3.5 rounded-full bg-velora-burgundy text-white hover:bg-[#3d1925] font-semibold text-xs uppercase tracking-wider transition shadow-lg inline-flex items-center justify-center gap-2">
+              <span>Explore Our Creations</span> <i data-lucide="arrow-right" class="w-4 h-4 shrink-0"></i>
+            </a>
+            <a href="#philosophy" class="whitespace-nowrap shrink-0 w-full sm:w-[245px] px-6 py-3.5 rounded-full bg-white dark:bg-velora-charcoal text-velora-charcoal dark:text-velora-ivory border border-velora-champagne hover:border-velora-burgundy font-semibold text-xs uppercase tracking-wider transition shadow-sm inline-flex items-center justify-center gap-2">
+              <span>Our Design Philosophy</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual Showcase -->
+        <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="1200">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Main Visual Frame -->
+            <div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-2 border-velora-champagne/60 dark:border-velora-burgundy/40 relative img-zoom-container">
+              <img src="https://images.pexels.com/photos/17825483/pexels-photo-17825483.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="VELORA Second-Skin Luxury Lace Bralette" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-velora-charcoal/70 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="text-[10px] uppercase tracking-widest text-velora-champagne font-semibold">Atelier Privé No. 4</span>
+                <p class="font-serif text-xl font-normal mt-1">Draped by hand to eliminate every point of physical pressure.</p>
+              </div>
+            </div>
+
+            <!-- Floating Accent Badge -->
+            <div class="absolute -bottom-6 -left-6 p-4 rounded-2xl glass-card shadow-xl border border-velora-champagne animate-float max-w-[210px] hidden sm:block">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-velora-rose/20 flex items-center justify-center text-velora-burgundy dark:text-velora-rose shrink-0">
+                  <i data-lucide="feather" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-semibold text-velora-charcoal dark:text-velora-ivory leading-tight">Zero-Gravity Fit</h4>
+                  <p class="text-[10px] text-stone-500 dark:text-stone-400 mt-0.5">38 grams average weight</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: THE THREE PILLARS OF VELORA
+       ========================================================================= -->
+  <section id="philosophy" class="py-24 bg-white/60 dark:bg-velora-charcoal/30 border-y border-velora-champagne/40 dark:border-velora-burgundy/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs uppercase tracking-widest text-velora-rose font-semibold">Our Guiding Ethos</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-velora-charcoal dark:text-velora-ivory mt-2">
+          Three Non-Negotiable Pillars
+        </h2>
+        <p class="text-sm text-stone-500 dark:text-stone-400 mt-2">
+          Every bra, bralette, boxer, and brief is conceived within the strict intersection of tactile delight, anatomical freedom, and absolute discretion.
+        </p>
+      </div>
+
+      <!-- 3 Staggered Editorial Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-8 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-velora-burgundy text-white flex items-center justify-center mb-6 shadow-md">
+              <i data-lucide="sparkles" class="w-7 h-7 text-velora-champagne"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-widest text-velora-rose">Pillar I</span>
+            <h3 class="font-serif text-2xl font-normal text-velora-charcoal dark:text-velora-ivory mt-2 mb-3">
+              Sensory Tactility
+            </h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              We exclusively use long-staple organic Peruvian Pima, Austrian Lenzing MicroModal derived from beechwood, and 22-momme Mulberry silk. Fabrics that breathe in resonance with your body temperature throughout day and night.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-velora-champagne/40 mt-6">
+            <span class="text-[11px] font-medium text-velora-burgundy dark:text-velora-champagne flex items-center gap-1.5">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-velora-rose"></i> 100% Zero-Synthetic Skin Contact
+            </span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-8 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-velora-rose text-white flex items-center justify-center mb-6 shadow-md">
+              <i data-lucide="shield" class="w-7 h-7 text-white"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-widest text-velora-rose">Pillar II</span>
+            <h3 class="font-serif text-2xl font-normal text-velora-charcoal dark:text-velora-ivory mt-2 mb-3">
+              Anatomical Freedom
+            </h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              We eliminated rigid metal underwires, abrasive plastic side-boning, and restrictive tight bands. In their place: 3D contour architecture and ultra-soft bonded hems that mirror natural body movement without rolling or bunching.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-velora-champagne/40 mt-6">
+            <span class="text-[11px] font-medium text-velora-burgundy dark:text-velora-champagne flex items-center gap-1.5">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-velora-rose"></i> Wire-Free Sculpting Support
+            </span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-8 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-velora-charcoal text-white dark:bg-velora-champagne dark:text-velora-charcoal flex items-center justify-center mb-6 shadow-md">
+              <i data-lucide="lock" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-widest text-velora-rose">Pillar III</span>
+            <h3 class="font-serif text-2xl font-normal text-velora-charcoal dark:text-velora-ivory mt-2 mb-3">
+              Quiet Discretion
+            </h3>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              From the invisible flatlock edge that guarantees zero panty lines under formal trousers, to our tamper-evident unbranded delivery parcels. Your intimate choices remain private, protected, and impeccably presented.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-velora-champagne/40 mt-6">
+            <span class="text-[11px] font-medium text-velora-burgundy dark:text-velora-champagne flex items-center gap-1.5">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-velora-rose"></i> 100% Anonymous Delivery Packaging
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: MATERIAL MASTERY & ARTISAN CRAFT
+       ========================================================================= -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Visual Column -->
+      <div class="lg:col-span-5 relative" data-aos="fade-right">
+        <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-velora-champagne/60 relative">
+          <img src="https://www.shutterstock.com/image-photo/lingerie-store-interior-delicate-romantic-260nw-1812141688.jpg" alt="VELORA Atelier Boutique Interior & Delicate Craftsmanship" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-velora-charcoal/60 via-transparent to-transparent"></div>
+          
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <span class="text-[10px] uppercase tracking-widest text-velora-champagne font-semibold">Micro-Precision Stitching</span>
+            <p class="font-serif text-lg font-normal mt-1">Stitched with 18 SPI (Stitches Per Inch) for enduring longevity.</p>
+          </div>
+        </div>
+
+        <!-- Floating Spec Tag -->
+        <div class="absolute -top-6 -right-6 p-4 rounded-2xl glass-card shadow-lg border border-velora-champagne/80 max-w-[200px] hidden sm:block">
+          <div class="text-xs font-semibold text-velora-charcoal dark:text-velora-ivory">Grade-6A Silk Charmeuse</div>
+          <p class="text-[10px] text-velora-rose mt-0.5">Naturally hypoallergenic</p>
+        </div>
+      </div>
+
+      <!-- Content & Comparison Column -->
+      <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
+        <span class="text-xs uppercase tracking-widest text-velora-rose font-semibold">The Technical Standard</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-velora-charcoal dark:text-velora-ivory leading-tight">
+          Crafted to Outlast Seasons, Not Just Trends
+        </h2>
+        <p class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed">
+          While mass-market innerwear relies on synthetic polyester blends and chemical softening washes that degrade after three launderings, VELORA relies on intrinsically superior botanical fibers and heat-bonded seam technology.
+        </p>
+
+        <!-- Technical Comparison Table / Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          
+          <div class="p-5 rounded-2xl border border-velora-champagne/60 bg-velora-champagne/15 dark:bg-velora-burgundy/15 space-y-2">
+            <div class="flex items-center gap-2 text-velora-burgundy dark:text-velora-champagne font-semibold text-sm">
+              <i data-lucide="check-circle" class="w-4 h-4 text-velora-rose"></i>
+              VELORA Atelier Standard
+            </div>
+            <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-1.5 list-disc list-inside">
+              <li>Austrian Lenzing MicroModal (2x softer than cotton)</li>
+              <li>Pure long-filament Mulberry Silk</li>
+              <li>Thermobonded flat seams (0 friction points)</li>
+              <li>Chlorine-free, non-toxic reactive dyeing</li>
+            </ul>
+          </div>
+
+          <div class="p-5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/40 space-y-2 opacity-75">
+            <div class="flex items-center gap-2 text-stone-500 font-semibold text-sm">
+              <i data-lucide="x-circle" class="w-4 h-4 text-stone-400"></i>
+              Conventional Fast-Fashion
+            </div>
+            <ul class="text-xs text-stone-500 dark:text-stone-400 space-y-1.5 list-disc list-inside">
+              <li>Petroleum-derived polyester and nylon</li>
+              <li>Short-staple scratchy carded cotton</li>
+              <li>Raised overlock threads that dig into skin</li>
+              <li>Synthetic chemical silicone washes</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="pt-4">
+          <a href="size-guide.html" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-velora-burgundy dark:text-velora-rose hover:underline">
+            Read Our Fabric & Care Guide &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: THE VELORA CHRONOLOGY (EVOLUTION & MILESTONES)
+       ========================================================================= -->
+  <section class="py-24 bg-velora-champagne/20 dark:bg-velora-charcoal/40 border-y border-velora-champagne/40 dark:border-velora-burgundy/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs uppercase tracking-widest text-velora-rose font-semibold">Our Journey</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-velora-charcoal dark:text-velora-ivory mt-2">
+          From Paris Inception to Global Atelier
+        </h2>
+        <p class="text-sm text-stone-500 dark:text-stone-400 mt-2">
+          A relentless pursuit of uncompromising comfort, documented milestone by milestone.
+        </p>
+      </div>
+
+      <!-- Chronology Timeline Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Milestone 1 -->
+        <div class="p-6 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <span class="font-serif text-4xl font-light text-velora-rose/70">2021</span>
+            <h4 class="font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory mt-2 mb-2">The Paris Inception</h4>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              Founded on the premise that underwear should be liberated from wires and synthetic friction. Initial prototype trials conducted with European silk weavers.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-velora-champagne/40 text-[10px] uppercase tracking-wider text-stone-400">
+            📍 Place Vendôme, Paris
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="p-6 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <span class="font-serif text-4xl font-light text-velora-rose/70">2023</span>
+            <h4 class="font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory mt-2 mb-2">The 3D Anatomy Lab</h4>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              Mapped over 200 real human bodies across body-mass indexes to develop the patented Zero-Roll Waistband and sculpt-molded cloud cups.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-velora-champagne/40 text-[10px] uppercase tracking-wider text-stone-400">
+            🔬 Ergonomic Fitting Research
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="p-6 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <span class="font-serif text-4xl font-light text-velora-rose/70">2025</span>
+            <h4 class="font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory mt-2 mb-2">Dual-Gender Harmony</h4>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              Expanded from haute lingerie to men’s ultra-fine MicroModal trunks, boxers, and seamless vests, establishing VELORA as the leading dual-gender house.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-velora-champagne/40 text-[10px] uppercase tracking-wider text-stone-400">
+            ✨ Men's & Women's Synchrony
+          </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="p-6 rounded-3xl glass-card luxury-card relative flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+          <div>
+            <span class="font-serif text-4xl font-light text-velora-rose/70">2026</span>
+            <h4 class="font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory mt-2 mb-2">Global Atelier Privé</h4>
+            <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+              Private client consultation suites established in Paris, Milan, and New York, offering custom size fittings and bespoke monogramming services.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-velora-champagne/40 text-[10px] uppercase tracking-wider text-stone-400">
+            🌍 Flagship Showrooms
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Atelier Tailoring Image Strip -->
+      <div class="mt-14 rounded-3xl overflow-hidden shadow-xl border border-velora-champagne/60 relative aspect-[21/9]" data-aos="zoom-in">
+        <img src="https://images.takoramart.com/categories/1793262410316-MensInnerwearStudioCollection.png" alt="VELORA The Precision Standard" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-velora-charcoal/80 via-velora-charcoal/40 to-transparent flex items-center">
+          <div class="p-8 sm:p-12 max-w-lg text-white">
+            <span class="text-xs uppercase tracking-widest text-velora-champagne font-semibold">The Precision Standard</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-normal mt-1">Calibrated to the millimeter, tested for thousands of hours.</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: THE CONSCIOUS LUXURY COVENANT & INVITATION
+       ========================================================================= -->
+  <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+      <span class="text-xs uppercase tracking-widest text-velora-rose font-semibold">Ethical Responsibility</span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-velora-charcoal dark:text-velora-ivory mt-2">
+        Conscious Luxury Covenant
+      </h2>
+      <p class="text-sm text-stone-500 dark:text-stone-400 mt-2">
+        True comfort extends beyond physical fabric—it includes the peace of mind that your garments were ethically produced.
+      </p>
+    </div>
+
+    <!-- 4 Ethical Commitment Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" data-aos="fade-up">
+      
+      <div class="p-6 rounded-2xl glass-card luxury-card space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-velora-burgundy text-white flex items-center justify-center">
+          <i data-lucide="leaf" class="w-5 h-5 text-velora-champagne"></i>
+        </div>
+        <h4 class="font-serif text-lg font-medium text-velora-charcoal dark:text-velora-ivory">Closed-Loop Modal</h4>
+        <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+          Over 99.7% of process solvents and water are recovered and recycled during our Austrian modal fiber transformation.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl glass-card luxury-card space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-velora-rose text-white flex items-center justify-center">
+          <i data-lucide="check-shield" class="w-5 h-5"></i>
+        </div>
+        <h4 class="font-serif text-lg font-medium text-velora-charcoal dark:text-velora-ivory">Oeko-Tex® Certified</h4>
+        <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+          Tested and certified free of over 300 harmful substances, toxic heavy metals, formaldehyde, and phthalates.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl glass-card luxury-card space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-velora-champagne text-velora-burgundy flex items-center justify-center">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+        <h4 class="font-serif text-lg font-medium text-velora-charcoal dark:text-velora-ivory">Artisan Living Wage</h4>
+        <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+          Every seamstress, cutter, and lace master receives a living wage surpassing European fair-trade benchmarks.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl glass-card luxury-card space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-velora-charcoal text-white dark:bg-velora-rose dark:text-velora-charcoal flex items-center justify-center">
+          <i data-lucide="send" class="w-5 h-5"></i>
+        </div>
+        <h4 class="font-serif text-lg font-medium text-velora-charcoal dark:text-velora-ivory">Carbon-Neutral Shipping</h4>
+        <p class="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+          100% of carbon emissions from our discreet global courier deliveries are offset via certified reforestation projects.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Final Atelier Invitation Banner -->
+    <div class="relative rounded-3xl overflow-hidden bg-velora-burgundy text-white p-8 sm:p-14 shadow-2xl" data-aos="zoom-in">
+      <img src="https://images.pexels.com/photos/5822660/pexels-photo-5822660.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Pure Silk Slip & Botanical Modal Drape" class="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-[1px]" />
+      <div class="absolute inset-0 bg-gradient-to-r from-velora-burgundy via-velora-burgundy/90 to-velora-burgundy/60"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto text-center space-y-5">
+        <span class="text-xs uppercase tracking-widest text-velora-champagne font-semibold">Your Comfort Elevation</span>
+        <h3 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal">
+          Experience the Difference of Second-Skin Architecture
+        </h3>
+        <p class="text-xs sm:text-sm text-rose-100 max-w-lg mx-auto leading-relaxed">
+          Discover our curated collection of silk bralettes, contour plunge bras, and micromodal trunks. Delivered with 100% confidential packaging.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="products.html" class="whitespace-nowrap shrink-0 w-full sm:w-[245px] px-6 py-3.5 rounded-full bg-velora-rose text-white hover:bg-[#b87c7e] font-semibold text-xs uppercase tracking-wider transition shadow-lg inline-flex items-center justify-center">
+            <span>Shop Full Catalog</span>
+          </a>
+          <a href="contact.html" class="whitespace-nowrap shrink-0 w-full sm:w-[245px] px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-velora-champagne/50 text-white font-semibold text-xs uppercase tracking-wider transition inline-flex items-center justify-center">
+            <span>Book Atelier Appointment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =========================================================================
+       SHARED LUXURY FOOTER
+       ========================================================================= -->
+  <footer class="bg-velora-charcoal text-velora-ivory pt-20 pb-12 border-t border-velora-burgundy/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-velora-burgundy/30">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne">
+              <img src="assets/logo.svg" alt="VELORA Logo" class="w-full h-full object-contain filter invert-0" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif text-2xl font-semibold tracking-[0.22em] text-velora-champagne">VELORA</span>
+              <span class="text-[9px] tracking-[0.35em] uppercase text-velora-rose -mt-1 font-medium">ATELIER PRIVÉ</span>
+            </div>
+          </a>
+          <p class="text-xs text-stone-400 max-w-sm leading-relaxed">
+            Crafting the world's most comfortable luxury lingerie and innerwear for both men and women. Conceived in Paris, woven from the finest natural fibers.
+          </p>
+          <div class="flex items-center space-x-2.5 pt-2">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" title="Follow VELORA on Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <!-- Pinterest -->
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-pinterest" title="Follow VELORA on Pinterest" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0a12 12 0 0 0-4.37 23.18c-.03-.94-.06-2.39.05-3.42.1-.93.68-5.83.68-5.83s-.17-.35-.17-.87c0-.82.47-1.43 1.07-1.43.5 0 .75.38.75.83 0 .5-.32 1.27-.49 1.97-.14.6.3 1.08.88 1.08 1.06 0 1.88-1.12 1.88-2.73 0-1.43-1.03-2.43-2.5-2.43-1.7 0-2.7 1.28-2.7 2.6 0 .52.2 1.07.45 1.37.05.06.06.12.04.18-.04.18-.15.6-.17.68-.03.11-.09.13-.2.08-.76-.35-1.23-1.46-1.23-2.35 0-1.92 1.39-3.68 4.02-3.68 2.11 0 3.75 1.5 3.75 3.51 0 2.1-1.32 3.79-3.16 3.79-.62 0-1.2-.32-1.4-.7l-.38 1.46c-.14.54-.52 1.21-.77 1.63A12 12 0 1 0 12 0z"/>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tiktok" title="Follow VELORA on TikTok" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-3.45.05-6.9.06-10.35.01-3.43-.01-6.86 0-10.28z"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" title="Follow VELORA on Facebook" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-youtube" title="Watch VELORA Campaigns on YouTube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Shop Men -->
+        <div>
+          <h4 class="font-serif text-base font-semibold text-velora-champagne uppercase tracking-wider mb-4">Shop Men</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="products.html?gender=men&category=trunks" class="hover:text-velora-rose transition">Apex MicroModal Trunks</a></li>
+            <li><a href="products.html?gender=men&category=boxers" class="hover:text-velora-rose transition">Pima Cotton Boxers</a></li>
+            <li><a href="products.html?gender=men&category=briefs" class="hover:text-velora-rose transition">Kinetic Contour Briefs</a></li>
+            <li><a href="products.html?gender=men&category=vests" class="hover:text-velora-rose transition">Seamless Undershirts</a></li>
+            <li><a href="products.html?gender=men&category=sleepwear" class="hover:text-velora-rose transition">Modal Cashmere Lounge</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Shop Women -->
+        <div>
+          <h4 class="font-serif text-base font-semibold text-velora-champagne uppercase tracking-wider mb-4">Shop Women</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="products.html?gender=women&category=bras" class="hover:text-velora-rose transition">Contour Plunge Bras</a></li>
+            <li><a href="products.html?gender=women&category=bralettes" class="hover:text-velora-rose transition">Mulberry Silk Bralettes</a></li>
+            <li><a href="products.html?gender=women&category=panties" class="hover:text-velora-rose transition">Lace & Seamless Panties</a></li>
+            <li><a href="products.html?gender=women&category=camisoles" class="hover:text-velora-rose transition">Satin Bias Camisoles</a></li>
+            <li><a href="products.html?gender=women&category=sleepwear" class="hover:text-velora-rose transition">Silk Robe Sleep Sets</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Client Services -->
+        <div>
+          <h4 class="font-serif text-base font-semibold text-velora-champagne uppercase tracking-wider mb-4">Client Care</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="about.html" class="hover:text-velora-rose transition">The Atelier Story</a></li>
+            <li><a href="size-guide.html" class="hover:text-velora-rose transition">Interactive Size Guide</a></li>
+            <li><a href="contact.html" class="hover:text-velora-rose transition">Private Concierge Support</a></li>
+            <li><a href="contact.html" class="hover:text-velora-rose transition">Discreet Packaging Policy</a></li>
+            <li><a href="size-guide.html" class="hover:text-velora-rose transition">Fabric & Care Guide</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-stone-400 gap-4">
+        <p>&copy; 2026 VELORA Atelier Inc. All rights reserved. High Luxury Innerwear.</p>
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="#" class="hover:text-velora-rose transition">Privacy Policy</a>
+          <a href="#" class="hover:text-velora-rose transition">Terms & Conditions</a>
+          <a href="#" class="hover:text-velora-rose transition">Ethical Sourcing</a>
+          <span class="text-stone-500">Encrypted 256-Bit SSL Checkout</span>
+        </div>
+        <!-- Back to Top Arrow in Right Corner of Footer -->
+        <button
+          type="button"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="back-to-top-btn group"
+          title="Back to Top"
+          aria-label="Back to Top">
+          <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-stone-400 group-hover:text-velora-champagne transition-colors">Back to Top</span>
+          <span class="back-to-top-circle">
+            <svg class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5"/>
+              <path d="M5 12l7-7 7 7"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       REUSABLE MODALS & DRAWERS
+       ========================================================================= -->
+
+  <!-- Cart Drawer -->
+  <div id="cart-backdrop" class="drawer-backdrop fixed inset-0 bg-black/60 backdrop-blur-sm z-50"></div>
+  <div id="cart-drawer" class="drawer-panel fixed top-0 right-0 bottom-0 w-full sm:w-[420px] bg-white dark:bg-velora-charcoal z-50 flex flex-col shadow-2xl border-l border-velora-champagne/40 dark:border-velora-burgundy/40">
+    <div class="p-5 border-b border-velora-champagne/40 dark:border-velora-burgundy/40 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-velora-burgundy dark:text-velora-rose"></i>
+        <h3 class="font-serif text-xl font-semibold text-velora-charcoal dark:text-velora-ivory">Your Shopping Bag</h3>
+      </div>
+      <button id="cart-close-btn" class="p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div class="px-5 py-3 bg-velora-champagne/30 dark:bg-velora-burgundy/20 border-b border-velora-champagne/40 text-xs">
+      <div class="h-1.5 w-full bg-stone-200 dark:bg-stone-700 rounded-full overflow-hidden mb-1.5">
+        <div id="shipping-progress-bar" class="h-full bg-velora-burgundy dark:bg-velora-rose transition-all duration-500" style="width: 0%;"></div>
+      </div>
+      <p id="shipping-progress-text" class="text-stone-600 dark:text-stone-300">
+        Add <span class="font-semibold text-velora-burgundy dark:text-velora-rose">$150.00</span> more for Complimentary Express Delivery.
+      </p>
+    </div>
+
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4"></div>
+
+    <div id="cart-empty-state" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+      <div class="w-16 h-16 rounded-full bg-velora-champagne/30 flex items-center justify-center text-velora-rose mb-4">
+        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+      </div>
+      <h4 class="font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">Your bag is empty</h4>
+      <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 max-w-xs">Explore our silk bralettes, contour bras, and micromodal trunks.</p>
+      <a href="products.html" class="mt-5 px-6 py-2.5 rounded-full bg-velora-burgundy text-white dark:bg-velora-rose dark:text-velora-charcoal text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition">
+        Discover Collections
+      </a>
+    </div>
+
+    <div id="cart-footer-section" class="p-5 border-t border-velora-champagne/40 dark:border-velora-burgundy/40 bg-stone-50 dark:bg-[#1e1c1f]">
+      <div class="flex items-center justify-between text-sm mb-3">
+        <span class="text-stone-500 dark:text-stone-400">Subtotal</span>
+        <span id="cart-subtotal-price" class="text-lg font-semibold text-velora-burgundy dark:text-velora-rose">$0.00</span>
+      </div>
+      <p class="text-[11px] text-stone-400 mb-4">Taxes and discreet shipping calculated at checkout.</p>
+      <button onclick="alert('Proceeding to Encrypted VELORA Checkout...');" class="w-full py-4 rounded-full bg-velora-burgundy hover:bg-[#3f1e29] dark:bg-velora-rose dark:text-velora-charcoal text-white font-semibold text-xs uppercase tracking-widest transition shadow-lg flex items-center justify-center gap-2">
+        <i data-lucide="lock" class="w-4 h-4"></i> Secure Checkout
+      </button>
+      <div class="mt-3 text-center">
+        <span class="text-[10px] text-stone-400">🔒 100% Discreet Packaging Guaranteed</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-start justify-center pt-20 px-4">
+    <div class="modal-content w-full max-w-2xl bg-white dark:bg-velora-charcoal rounded-3xl p-6 sm:p-8 shadow-2xl border border-velora-champagne/40">
+      <div class="flex items-center justify-between pb-4 border-b border-velora-champagne/40">
+        <h3 class="font-serif text-2xl font-semibold text-velora-charcoal dark:text-velora-ivory">Search VELORA</h3>
+        <button id="search-close-btn" class="p-2 text-stone-400 hover:text-velora-rose transition">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div class="mt-6 relative">
+        <input 
+          id="search-input" 
+          type="text" 
+          placeholder="Search by product name, fabric (silk, modal, cotton), or category..." 
+          class="w-full px-5 py-4 pl-12 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-velora-champagne/60 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory"
+        />
+        <i data-lucide="search" class="w-5 h-5 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+      </div>
+      <div id="search-results" class="mt-6 max-h-[50vh] overflow-y-auto space-y-2"></div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div id="quick-view-modal" class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="modal-content relative w-full max-w-4xl bg-white dark:bg-velora-charcoal rounded-3xl shadow-2xl overflow-hidden border border-velora-champagne/40 max-h-[90vh] overflow-y-auto">
+      <button id="quick-view-close" class="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 hover:text-velora-rose transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="quick-view-content"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu-backdrop" class="drawer-backdrop fixed inset-0 bg-black/60 backdrop-blur-sm z-50 xl:hidden"></div>
+  <div id="mobile-menu-drawer" class="drawer-panel fixed top-0 right-0 bottom-0 w-[300px] sm:w-[360px] bg-white dark:bg-velora-charcoal z-50 p-6 flex flex-col justify-between shadow-2xl border-l border-velora-champagne/40 xl:hidden">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-velora-champagne/40">
+        <div class="flex items-center gap-2">
+          <img src="assets/logo.svg" alt="VELORA" class="w-8 h-8" />
+          <span class="font-serif text-xl font-bold tracking-widest text-velora-burgundy dark:text-velora-champagne">VELORA</span>
+        </div>
+        <button id="mobile-menu-close" class="p-2 text-stone-500 hover:text-velora-rose">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Drawer Quick Actions Bar (Search, Wishlist, Bag, Theme, RTL) -->
+      <div class="py-3.5 my-2 border-b border-velora-champagne/40 dark:border-velora-burgundy/40 grid grid-cols-5 gap-1 text-center">
+        <!-- Search Button -->
+        <button
+          class="search-modal-trigger p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-2xl hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 flex flex-col items-center justify-center gap-1 group"
+          title="Search Collection">
+          <i data-lucide="search" class="w-5 h-5 transition-transform group-hover:scale-110"></i>
+          <span class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium">Search</span>
+        </button>
+
+        <!-- Wishlist Button -->
+        <a
+          href="products.html"
+          class="relative p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-2xl hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 flex flex-col items-center justify-center gap-1 group"
+          title="Wishlist">
+          <div class="relative">
+            <i data-lucide="heart" class="w-5 h-5 transition-transform group-hover:scale-110"></i>
+            <span class="wishlist-badge-count hidden absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-velora-rose text-white text-[8px] font-bold flex items-center justify-center">0</span>
+          </div>
+          <span class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium">Saved</span>
+        </a>
+
+        <!-- Cart Drawer Trigger Button -->
+        <button
+          class="cart-drawer-trigger relative p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-2xl hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 flex flex-col items-center justify-center gap-1 group"
+          title="Shopping Bag">
+          <div class="relative">
+            <i data-lucide="shopping-bag" class="w-5 h-5 transition-transform group-hover:scale-110"></i>
+            <span class="cart-badge-count hidden absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-velora-burgundy dark:bg-velora-rose text-white dark:text-velora-charcoal text-[8px] font-bold flex items-center justify-center">0</span>
+          </div>
+          <span class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium">Bag</span>
+        </button>
+
+        <!-- Theme Toggle (Light / Dark) -->
+        <button
+          class="theme-toggle-btn p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-2xl hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 flex flex-col items-center justify-center gap-1 group"
+          title="Toggle Theme">
+          <i data-lucide="moon" class="theme-icon-moon w-5 h-5 transition-transform group-hover:scale-110"></i>
+          <i data-lucide="sun" class="theme-icon-sun w-5 h-5 hidden transition-transform group-hover:scale-110"></i>
+          <span class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium">Theme</span>
+        </button>
+
+        <!-- RTL Toggle (Left-Right Arrow) -->
+        <button
+          class="rtl-toggle-btn p-2 text-velora-charcoal/80 dark:text-velora-ivory/80 hover:text-velora-burgundy dark:hover:text-velora-rose transition rounded-2xl hover:bg-velora-champagne/30 dark:hover:bg-velora-burgundy/30 flex flex-col items-center justify-center gap-1 group"
+          title="Toggle RTL Layout">
+          <i data-lucide="arrow-left-right" class="w-5 h-5 transition-transform group-hover:scale-110"></i>
+          <span class="text-[9px] uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium">RTL</span>
+        </button>
+      </div>
+
+            <nav class="mt-8 space-y-4 text-sm uppercase tracking-widest font-medium">
+        <a href="index.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Home 1 (Luxury Experience)</a>
+        <a href="home-2.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Home 2 (Editorial Shopping)</a>
+        <a href="about.html" class="block py-2 text-velora-burgundy dark:text-velora-rose font-bold border-b border-stone-100 dark:border-stone-800">About VELORA</a>
+        <a href="products.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Products Catalog</a>
+        <a href="size-guide.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Interactive Size Guide</a>
+        <a href="contact.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Contact & Concierge</a>
+      </nav>
+
+      <!-- Mobile Auth Button -->
+      <div class="mt-6 pt-4 border-t border-velora-champagne/40">
+        <a href="signup.html" class="block w-full py-2.5 text-center text-xs uppercase tracking-wider font-semibold bg-velora-burgundy text-white dark:bg-velora-rose dark:text-velora-charcoal rounded-full hover:bg-velora-rose transition shadow-sm">Sign Up</a>
+      </div>
+
+      <div class="mt-6 pt-6 border-t border-velora-champagne/40 space-y-3">
+        <a href="products.html?gender=women" class="block text-xs uppercase tracking-wider text-velora-rose font-semibold">Women's Lingerie Collection &rarr;</a>
+        <a href="products.html?gender=men" class="block text-xs uppercase tracking-wider text-velora-burgundy dark:text-velora-champagne font-semibold">Men's Innerwear Collection &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-velora-champagne/40">
+      <div class="flex items-center justify-center space-x-2.5 mb-3">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" title="Instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-pinterest" title="Pinterest" aria-label="Pinterest">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0a12 12 0 0 0-4.37 23.18c-.03-.94-.06-2.39.05-3.42.1-.93.68-5.83.68-5.83s-.17-.35-.17-.87c0-.82.47-1.43 1.07-1.43.5 0 .75.38.75.83 0 .5-.32 1.27-.49 1.97-.14.6.3 1.08.88 1.08 1.06 0 1.88-1.12 1.88-2.73 0-1.43-1.03-2.43-2.5-2.43-1.7 0-2.7 1.28-2.7 2.6 0 .52.2 1.07.45 1.37.05.06.06.12.04.18-.04.18-.15.6-.17.68-.03.11-.09.13-.2.08-.76-.35-1.23-1.46-1.23-2.35 0-1.92 1.39-3.68 4.02-3.68 2.11 0 3.75 1.5 3.75 3.51 0 2.1-1.32 3.79-3.16 3.79-.62 0-1.2-.32-1.4-.7l-.38 1.46c-.14.54-.52 1.21-.77 1.63A12 12 0 1 0 12 0z"/>
+          </svg>
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-tiktok" title="TikTok" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-3.45.05-6.9.06-10.35.01-3.43-.01-6.86 0-10.28z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="text-[11px] text-stone-400 text-center">VELORA Luxury Intimates</p>
+    </div>
+  </div>
+
+  <!-- Lucide Icons & AOS CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
+  </script>
+
+  <!-- Application Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+

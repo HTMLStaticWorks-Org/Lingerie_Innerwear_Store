@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="veloraGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C88F91" />
+      <stop offset="50%" stop-color="#E8D8C7" />
+      <stop offset="100%" stop-color="#572B3A" />
+    </linearGradient>
+    <linearGradient id="veloraRose" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#572B3A" />
+      <stop offset="100%" stop-color="#C88F91" />
+    </linearGradient>
+  </defs>
+  <!-- Outer subtle luxury ring -->
+  <circle cx="50" cy="50" r="46" stroke="url(#veloraGold)" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+  <circle cx="50" cy="50" r="41" stroke="#E8D8C7" stroke-width="0.75" opacity="0.4"/>
+  <!-- Stylized Monogram V with fluid innerwear curves -->
+  <path d="M28 26 C33 36, 44 65, 50 78 C56 65, 67 36, 72 26 C66 32, 59 44, 50 62 C41 44, 34 32, 28 26 Z" fill="url(#veloraRose)"/>
+  <!-- Fluid sensual contour ribbon -->
+  <path d="M38 32 C43 45, 50 56, 50 56 C50 56, 57 45, 62 32 C58 37, 54 44, 50 49 C46 44, 42 37, 38 32 Z" fill="#E8D8C7"/>
+  <!-- Delicate center gem diamond -->
+  <polygon points="50,18 53,23 50,28 47,23" fill="#C88F91"/>
+</svg>
+
