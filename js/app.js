@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('contact-form')) {
     initContactForm();
   }
-  if (document.querySelector('.faq-accordion')) {
+  if (document.querySelector('.accordion-btn') || document.querySelector('.accordion-group') || document.querySelector('.faq-accordion')) {
     initAccordions();
   }
   if (document.getElementById('home1-product-slider')) {
@@ -504,8 +504,8 @@ function openQuickView(productId) {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 md:p-8">
       <!-- Image Gallery -->
       <div>
-        <div class="rounded-xl overflow-hidden aspect-[4/5] bg-[#F8F4EF] dark:bg-[#1f1d20] border border-[#E8D8C7]/50 dark:border-[#572B3A]/30">
-          <img id="qv-main-image" src="${getProductDisplayImage(product)}" alt="${product.name}" class="w-full h-full object-cover transition-all duration-300" />
+        <div class="product-img-frame aspect-[4/5]">
+          <img id="qv-main-image" src="${getProductDisplayImage(product)}" alt="${product.name}" class="product-img-el ${getProductImageCropClass(product, getProductDisplayImage(product))}" />
         </div>
         ${product.gallery && product.gallery.length > 1 ? `
           <div class="flex gap-2 mt-3">
@@ -709,19 +709,28 @@ function getProductDisplayImage(p) {
   return (isProductsPage && p.productPageImage) ? p.productPageImage : p.image;
 }
 
+function getProductImageCropClass(p, displayImg) {
+  if (!p) return '';
+  if (p.id === 'w-01') return 'crop-w01';
+  if (p.id === 'w-02' && displayImg === p.productPageImage) return 'crop-w02';
+  if (p.id === 'w-05') return 'crop-w05';
+  return '';
+}
+
 function createEditorialProductCard(p) {
   const isWish = wishlistState.includes(p.id);
   const displayImg = getProductDisplayImage(p);
+  const cropClass = getProductImageCropClass(p, displayImg);
   return `
-    <div class="luxury-card group relative bg-white dark:bg-[#252326] rounded-2xl overflow-hidden border border-[#E8D8C7]/60 dark:border-[#572B3A]/40 flex flex-col h-full shadow-sm">
-      <!-- Image Container -->
-      <div class="relative aspect-[3/4] overflow-hidden bg-[#F8F4EF] dark:bg-[#1a191b]">
-        <img src="${displayImg}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+    <div class="luxury-card group relative bg-white dark:bg-[#252326] rounded-2xl overflow-hidden border border-[#E8D8C7]/70 dark:border-[#572B3A]/40 flex flex-col h-full shadow-sm p-3">
+      <!-- Image Container (Uniform Framed Box) -->
+      <div class="product-img-frame">
+        <img src="${displayImg}" alt="${p.name}" loading="lazy" class="product-img-el ${cropClass}" />
         
         <!-- Badge -->
         ${p.badge ? `
-          <div class="absolute top-3 left-3">
-            <span class="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-[#F8F4EF]/90 backdrop-blur-md text-[#572B3A] border border-[#E8D8C7] shadow-sm dark:bg-[#252326]/90 dark:text-[#E8D8C7] dark:border-[#572B3A]">
+          <div class="absolute top-3 left-3 z-10">
+            <span class="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-[#F8F4EF]/95 backdrop-blur-md text-[#572B3A] border border-[#E8D8C7] shadow-sm dark:bg-[#252326]/95 dark:text-[#E8D8C7] dark:border-[#572B3A]">
               ${p.badge}
             </span>
           </div>
@@ -731,13 +740,13 @@ function createEditorialProductCard(p) {
         <button 
           data-wishlist-id="${p.id}"
           onclick="toggleWishlist('${p.id}')" 
-          class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 dark:bg-[#252326]/90 backdrop-blur-md flex items-center justify-center text-[#252326] dark:text-[#F8F4EF] shadow-md hover:scale-110 transition ${isWish ? 'text-rose-600' : ''}"
+          class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white/95 dark:bg-[#252326]/95 backdrop-blur-md flex items-center justify-center text-[#252326] dark:text-[#F8F4EF] shadow-md hover:scale-110 transition ${isWish ? 'text-rose-600' : ''}"
           title="Save to Wishlist">
           <i data-lucide="heart" class="w-4 h-4" style="${isWish ? 'fill: #C88F91;' : ''}"></i>
         </button>
 
         <!-- Hover Quick Actions Bar -->
-        <div class="absolute inset-x-3 bottom-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
+        <div class="absolute inset-x-3 bottom-3 z-10 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
           <button 
             onclick="openQuickView('${p.id}')" 
             class="flex-1 py-2.5 px-3 rounded-xl bg-white/95 dark:bg-[#252326]/95 backdrop-blur-md text-xs font-semibold text-[#252326] dark:text-[#F8F4EF] hover:bg-[#572B3A] hover:text-white dark:hover:bg-[#C88F91] dark:hover:text-[#252326] transition shadow-md flex items-center justify-center gap-1.5">
@@ -753,7 +762,7 @@ function createEditorialProductCard(p) {
       </div>
 
       <!-- Card Body -->
-      <div class="p-4 md:p-5 flex-1 flex flex-col justify-between">
+      <div class="pt-4 px-2 pb-1 flex-1 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between text-[11px] uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium mb-1">
             <span>${p.gender} • ${p.category}</span>
@@ -761,7 +770,7 @@ function createEditorialProductCard(p) {
               ★ <span>${p.rating}</span>
             </div>
           </div>
-          <h3 class="font-serif text-lg font-medium text-[#252326] dark:text-[#F8F4EF] line-clamp-1 group-hover:text-[#572B3A] dark:group-hover:text-[#C88F91] transition">
+          <h3 class="font-serif text-lg font-medium text-[#252326] dark:text-[#F8F4EF] line-clamp-1 min-h-[1.75rem] group-hover:text-[#572B3A] dark:group-hover:text-[#C88F91] transition">
             ${p.name}
           </h3>
         </div>
@@ -1147,26 +1156,32 @@ function initSizeCalculator() {
 }
 
 // --- Accordions (FAQs) ---
+window.toggleAccordionItem = function(btn) {
+  if (!btn) return;
+  const content = btn.nextElementSibling;
+  if (!content) return;
+  const icon = btn.querySelector('.accordion-icon') || btn.querySelector('svg');
+  const isOpen = !content.classList.contains('hidden');
+
+  // Close all in this group
+  const parent = btn.closest('.accordion-group');
+  if (parent) {
+    parent.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
+    parent.querySelectorAll('.accordion-icon, .accordion-btn svg').forEach(i => i.style.transform = 'rotate(0deg)');
+  }
+
+  if (!isOpen) {
+    content.classList.remove('hidden');
+    if (icon) icon.style.transform = 'rotate(180deg)';
+  }
+};
+
 function initAccordions() {
   const accordionButtons = document.querySelectorAll('.accordion-btn');
   accordionButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const content = btn.nextElementSibling;
-      const icon = btn.querySelector('.accordion-icon');
-      const isOpen = !content.classList.contains('hidden');
-
-      // Close all in this group
-      const parent = btn.closest('.accordion-group');
-      if (parent) {
-        parent.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
-        parent.querySelectorAll('.accordion-icon').forEach(i => i.style.transform = 'rotate(0deg)');
-      }
-
-      if (!isOpen) {
-        content.classList.remove('hidden');
-        if (icon) icon.style.transform = 'rotate(180deg)';
-      }
-    });
+    btn.onclick = function() {
+      window.toggleAccordionItem(this);
+    };
   });
 }
 

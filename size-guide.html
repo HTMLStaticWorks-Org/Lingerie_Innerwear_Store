@@ -52,14 +52,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between gap-4">
         
-                <!-- Brand Logo & Symbol -->
-        <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
-          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
+        <!-- Brand Logo & Symbol -->
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
             <img src="assets/logo.svg" alt="VELORA Emblem" class="w-full h-full object-contain filter invert-0" />
           </div>
           <div class="flex flex-col">
-            <span class="font-serif text-lg sm:text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors leading-none">VELORA</span>
-            <span class="text-[7px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 mt-0.5 sm:-mt-1 font-medium hidden sm:block">ATELIER PRIVÉ</span>
+            <span class="font-serif text-2xl font-semibold tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors">VELORA</span>
+            <span class="text-[9px] tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 -mt-1 font-medium">ATELIER PRIVÉ</span>
           </div>
         </a>
 
@@ -468,9 +468,9 @@
        ========================================================================= -->
   <section id="size-calculator-container" class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="p-8 sm:p-12 rounded-3xl glass-card shadow-2xl border border-velora-champagne relative" data-aos="zoom-in">
+    <div class="p-5 sm:p-12 rounded-3xl glass-card shadow-2xl border border-velora-champagne relative overflow-hidden" data-aos="zoom-in">
       
-      <div class="text-center max-w-xl mx-auto mb-10">
+      <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
         <span class="text-xs uppercase tracking-widest text-velora-rose font-semibold">Interactive Fit Engine</span>
         <h2 class="font-serif text-3xl sm:text-4xl font-normal text-velora-charcoal dark:text-velora-ivory mt-1">
           Precision Sizing Calculator
@@ -481,20 +481,20 @@
       </div>
 
       <!-- Controls: Gender Tab & Unit Toggle -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 border-b border-velora-champagne/50 dark:border-velora-burgundy/40">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-8 border-b border-velora-champagne/50 dark:border-velora-burgundy/40">
         
         <!-- Tab Switcher -->
-        <div class="flex items-center rounded-full p-1 bg-stone-100 dark:bg-stone-800 border border-velora-champagne/50">
-          <button id="calc-tab-women" class="whitespace-nowrap shrink-0 px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-[#572B3A] text-white dark:bg-[#C88F91] dark:text-[#252326]">
+        <div class="w-full sm:w-auto grid grid-cols-1 min-[390px]:grid-cols-2 sm:inline-flex items-center gap-1 rounded-2xl sm:rounded-full p-1 bg-stone-100 dark:bg-stone-800 border border-velora-champagne/50">
+          <button id="calc-tab-women" class="w-full sm:w-auto whitespace-nowrap px-3 sm:px-6 py-2.5 sm:py-2 rounded-xl sm:rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-normal sm:tracking-wider transition bg-[#572B3A] text-white dark:bg-[#C88F91] dark:text-[#252326] text-center">
             Women's Calculator
           </button>
-          <button id="calc-tab-men" class="whitespace-nowrap shrink-0 px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition text-stone-600 dark:text-stone-300 hover:text-velora-rose">
+          <button id="calc-tab-men" class="w-full sm:w-auto whitespace-nowrap px-3 sm:px-6 py-2.5 sm:py-2 rounded-xl sm:rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-normal sm:tracking-wider transition text-stone-600 dark:text-stone-300 hover:text-velora-rose text-center">
             Men's Calculator
           </button>
         </div>
 
         <!-- Unit Radios -->
-        <div class="flex items-center gap-4 text-xs font-medium text-stone-600 dark:text-stone-300">
+        <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-2 text-xs font-medium text-stone-600 dark:text-stone-300">
           <span class="text-stone-400">Units:</span>
           <label class="flex items-center gap-1.5 cursor-pointer">
             <input type="radio" name="unit-radio" value="inches" checked class="accent-velora-burgundy dark:accent-velora-rose" />
@@ -666,9 +666,9 @@
         
         <!-- FAQ 1 -->
         <div class="p-5 rounded-2xl glass-card border border-velora-champagne/60">
-          <button class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
+          <button type="button" onclick="if(window.toggleAccordionItem){window.toggleAccordionItem(this)}else{const c=this.nextElementSibling;if(c){const o=!c.classList.contains('hidden');const g=this.closest('.accordion-group');if(g){g.querySelectorAll('.accordion-content').forEach(el=>el.classList.add('hidden'));g.querySelectorAll('.accordion-icon, svg').forEach(ic=>ic.style.transform='rotate(0deg)');}if(!o){c.classList.remove('hidden');const ic=this.querySelector('.accordion-icon, svg');if(ic)ic.style.transform='rotate(180deg)';}}}" class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
             <span>How do I measure my bra size accurately at home?</span>
-            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300"></i>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="accordion-content hidden mt-4 pt-4 border-t border-velora-champagne/40 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
             Wear a simple unpadded bra. Keep the measuring tape parallel to the floor. First measure directly under your bust as tight as comfortable for your band size. Next, measure around the fullest part of your bust loosely. Subtract the band from the bust to determine your cup size (1" diff = A, 2" = B, 3" = C, 4" = D, 5" = DD).
@@ -677,9 +677,9 @@
 
         <!-- FAQ 2 -->
         <div class="p-5 rounded-2xl glass-card border border-velora-champagne/60">
-          <button class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
+          <button type="button" onclick="if(window.toggleAccordionItem){window.toggleAccordionItem(this)}else{const c=this.nextElementSibling;if(c){const o=!c.classList.contains('hidden');const g=this.closest('.accordion-group');if(g){g.querySelectorAll('.accordion-content').forEach(el=>el.classList.add('hidden'));g.querySelectorAll('.accordion-icon, svg').forEach(ic=>ic.style.transform='rotate(0deg)');}if(!o){c.classList.remove('hidden');const ic=this.querySelector('.accordion-icon, svg');if(ic)ic.style.transform='rotate(180deg)';}}}" class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
             <span>Do VELORA men's trunks stretch over time?</span>
-            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300"></i>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="accordion-content hidden mt-4 pt-4 border-t border-velora-champagne/40 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
             No. Our Apex MicroModal is blended with 7% high-recovery Lycra and heat-set under proprietary tension. It retains 98.4% of its shape and resilience even after 100+ machine wash cycles.
@@ -688,9 +688,9 @@
 
         <!-- FAQ 3 -->
         <div class="p-5 rounded-2xl glass-card border border-velora-champagne/60">
-          <button class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
+          <button type="button" onclick="if(window.toggleAccordionItem){window.toggleAccordionItem(this)}else{const c=this.nextElementSibling;if(c){const o=!c.classList.contains('hidden');const g=this.closest('.accordion-group');if(g){g.querySelectorAll('.accordion-content').forEach(el=>el.classList.add('hidden'));g.querySelectorAll('.accordion-icon, svg').forEach(ic=>ic.style.transform='rotate(0deg)');}if(!o){c.classList.remove('hidden');const ic=this.querySelector('.accordion-icon, svg');if(ic)ic.style.transform='rotate(180deg)';}}}" class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
             <span>How does the 30-Day First Pair Guarantee work?</span>
-            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300"></i>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="accordion-content hidden mt-4 pt-4 border-t border-velora-champagne/40 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
             We want you to experience VELORA risk-free. If your first pair of underwear or bralette does not fit you like a dream, keep it! We will send you an alternate size or issue a 100% refund without requiring you to return the opened garment.
@@ -699,9 +699,9 @@
 
         <!-- FAQ 4 -->
         <div class="p-5 rounded-2xl glass-card border border-velora-champagne/60">
-          <button class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
+          <button type="button" onclick="if(window.toggleAccordionItem){window.toggleAccordionItem(this)}else{const c=this.nextElementSibling;if(c){const o=!c.classList.contains('hidden');const g=this.closest('.accordion-group');if(g){g.querySelectorAll('.accordion-content').forEach(el=>el.classList.add('hidden'));g.querySelectorAll('.accordion-icon, svg').forEach(ic=>ic.style.transform='rotate(0deg)');}if(!o){c.classList.remove('hidden');const ic=this.querySelector('.accordion-icon, svg');if(ic)ic.style.transform='rotate(180deg)';}}}" class="accordion-btn w-full flex items-center justify-between text-left font-serif text-xl font-medium text-velora-charcoal dark:text-velora-ivory">
             <span>What is the difference between MicroModal and Pima Cotton?</span>
-            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300"></i>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-velora-rose transition-transform duration-300 shrink-0"></i>
           </button>
           <div class="accordion-content hidden mt-4 pt-4 border-t border-velora-champagne/40 text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
             MicroModal is spun from Austrian beechwood fibers and delivers an ultra-smooth, cool-to-touch, silky drape that clings softly without friction. Pima cotton has a crisp, traditional woven luxury feel with natural breathability and classic structure.
@@ -730,7 +730,7 @@
   <footer class="bg-[#F3ECE3] dark:bg-velora-charcoal text-velora-charcoal dark:text-velora-ivory pt-20 pb-12 border-t border-velora-champagne dark:border-velora-burgundy/40 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-velora-champagne/80 dark:border-velora-burgundy/30">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 xl:gap-10 items-start pb-16 border-b border-velora-champagne/80 dark:border-velora-burgundy/30">
         
         <!-- Column 1: Brand Info -->
         <div class="lg:col-span-2 space-y-4">
@@ -814,7 +814,6 @@
             <li><a href="size-guide.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Interactive Size Guide</a></li>
             <li><a href="contact.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Private Concierge Support</a></li>
             <li><a href="contact.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Discreet Packaging Policy</a></li>
-            <li><a href="size-guide.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Fabric & Care Guide</a></li>
             <li><a href="contact.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Returns & Exchanges (30 Days)</a></li>
           </ul>
         </div>
@@ -822,13 +821,13 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-4">
-        <p>&copy; 2026 VELORA Atelier Inc. All rights reserved. High Luxury Innerwear.</p>
-        <div class="flex flex-wrap items-center justify-center gap-6">
+      <div class="pt-8 flex flex-col lg:flex-row items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-4">
+        <p class="whitespace-nowrap text-center lg:text-left">&copy; 2026 VELORA Atelier Inc. All rights reserved. High Luxury Innerwear.</p>
+        <div class="flex flex-wrap items-center justify-center gap-5 xl:gap-6">
           <a href="#" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Privacy Policy</a>
           <a href="#" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Terms & Conditions</a>
           <a href="#" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Ethical Sourcing</a>
-          <span class="text-stone-500">Encrypted 256-Bit SSL Checkout</span>
+          <span class="text-stone-500 whitespace-nowrap">Encrypted 256-Bit SSL Checkout</span>
         </div>
         <!-- Back to Top Arrow in Right Corner of Footer -->
         <button
@@ -937,10 +936,15 @@
   <div id="mobile-menu-drawer" class="drawer-panel fixed top-0 right-0 bottom-0 w-[300px] sm:w-[360px] bg-white dark:bg-velora-charcoal z-50 p-6 flex flex-col justify-between shadow-2xl border-l border-velora-champagne/40 xl:hidden">
     <div>
       <div class="flex items-center justify-between pb-6 border-b border-velora-champagne/40">
-        <div class="flex items-center gap-2">
-          <img src="assets/logo.svg" alt="VELORA" class="w-8 h-8" />
-          <span class="font-serif text-xl font-bold tracking-widest text-velora-burgundy dark:text-velora-champagne">VELORA</span>
-        </div>
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm shrink-0">
+            <img src="assets/logo.svg" alt="VELORA Emblem" class="w-full h-full object-contain filter invert-0" />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-2xl font-semibold tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors">VELORA</span>
+            <span class="text-[9px] tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 -mt-1 font-medium">ATELIER PRIVÉ</span>
+          </div>
+        </a>
         <button id="mobile-menu-close" class="p-2 text-stone-500 hover:text-velora-rose">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
@@ -996,13 +1000,13 @@
         </button>
       </div>
 
-            <nav class="mt-8 space-y-4 text-sm uppercase tracking-widest font-medium">
-        <a href="index.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Home 1 (Luxury Experience)</a>
-        <a href="home-2.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Home 2 (Editorial Shopping)</a>
-        <a href="about.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">About VELORA</a>
-        <a href="products.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Products Catalog</a>
-        <a href="size-guide.html" class="block py-2 text-velora-burgundy dark:text-velora-rose font-bold border-b border-stone-100 dark:border-stone-800">Interactive Size Guide</a>
-        <a href="contact.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Contact & Concierge</a>
+      <nav class="mt-8 space-y-2 text-sm uppercase tracking-widest font-medium">
+        <a href="index.html" class="mobile-nav-link">Home 1</a>
+        <a href="home-2.html" class="mobile-nav-link">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="size-guide.html" class="mobile-nav-link active">Size Guide</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </nav>
 
       <!-- Mobile Auth Button -->
@@ -1061,8 +1065,8 @@
   </script>
 
   <!-- Application Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/products-data.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
 </body>
 </html>
 

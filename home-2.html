@@ -57,14 +57,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between gap-4">
 
-                <!-- Brand Logo & Symbol -->
-        <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
-          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
+        <!-- Brand Logo & Symbol -->
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
             <img src="assets/logo.svg" alt="VELORA Emblem" class="w-full h-full object-contain filter invert-0" />
           </div>
           <div class="flex flex-col">
-            <span class="font-serif text-lg sm:text-2xl font-semibold tracking-[0.2em] sm:tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors leading-none">VELORA</span>
-            <span class="text-[7px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 mt-0.5 sm:-mt-1 font-medium hidden sm:block">ATELIER PRIVÉ</span>
+            <span class="font-serif text-2xl font-semibold tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors">VELORA</span>
+            <span class="text-[9px] tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 -mt-1 font-medium">ATELIER PRIVÉ</span>
           </div>
         </a>
 
@@ -348,7 +348,7 @@
       </div>
 
       <!-- Bestseller Grid -->
-      <div id="home2-bestseller-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div id="home2-bestseller-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         <!-- Rendered dynamically by app.js -->
       </div>
 
@@ -364,24 +364,26 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         <!-- Story Imagery Showcase -->
-        <div class="lg:col-span-6 relative" data-aos="fade-right">
-          <div
-            class="rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl border border-velora-champagne/60 img-zoom-container">
-            <img src="https://images.pexels.com/photos/6976075/pexels-photo-6976075.jpeg?auto=compress&cs=tinysrgb&w=1000"
-              alt="VELORA Atelier Pure Mulberry Silk Loungewear Comfort Story" class="w-full h-full object-cover" />
-          </div>
+        <div class="lg:col-span-6 relative pb-6 sm:pb-8 lg:pb-0" data-aos="fade-right">
+          <div class="relative mx-auto max-w-lg lg:max-w-none">
+            <div
+              class="rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl border border-velora-champagne/60 img-zoom-container">
+              <img src="https://images.pexels.com/photos/6976075/pexels-photo-6976075.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                alt="VELORA Atelier Pure Mulberry Silk Loungewear Comfort Story" class="w-full h-full object-cover" />
+            </div>
 
-          <!-- Inset Story Detail Card -->
-          <div
-            class="absolute -bottom-8 -right-6 p-6 rounded-2xl glass-card shadow-2xl border border-velora-champagne max-w-xs hidden sm:block animate-float">
-            <div class="flex items-center gap-3">
-              <div
-                class="w-12 h-12 rounded-xl bg-velora-burgundy text-velora-champagne flex items-center justify-center font-serif text-xl font-bold">
-                19M
-              </div>
-              <div>
-                <h4 class="text-xs font-semibold text-velora-charcoal dark:text-velora-ivory">Mulberry Silk Density</h4>
-                <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-0.5">Heavyweight weave with satin lustre</p>
+            <!-- Inset Story Detail Card (Visible and aligned across mobile, tablet, and desktop) -->
+            <div
+              class="absolute -bottom-5 right-3 sm:-bottom-6 sm:right-4 lg:right-4 z-20 p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#201d22] shadow-2xl border border-velora-champagne dark:border-stone-700 max-w-[260px] sm:max-w-xs block animate-float">
+              <div class="flex items-center gap-3.5">
+                <div
+                  class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-velora-burgundy text-velora-champagne flex items-center justify-center font-serif text-lg sm:text-xl font-bold">
+                  19M
+                </div>
+                <div class="text-left min-w-0">
+                  <h4 class="text-xs font-bold text-velora-charcoal dark:text-velora-ivory leading-tight">Mulberry Silk Density</h4>
+                  <p class="text-[11px] text-stone-600 dark:text-stone-300 font-medium mt-0.5 leading-snug">Heavyweight weave with satin lustre</p>
+                </div>
               </div>
             </div>
           </div>
@@ -529,13 +531,13 @@
     </div>
 
     <!-- Editorial Collage Grid with 3D Tilt Hover Effects -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
 
       <!-- Card 1: Everyday Wear -->
       <div
-        class="group luxury-card rounded-3xl overflow-hidden bg-white dark:bg-velora-charcoal border border-velora-champagne/60 dark:border-velora-burgundy/40 shadow-sm"
+        class="group luxury-card h-full flex flex-col rounded-3xl overflow-hidden bg-white dark:bg-velora-charcoal border border-velora-champagne/60 dark:border-velora-burgundy/40 shadow-sm"
         data-aos="fade-up" data-aos-delay="100">
-        <div class="aspect-[3/4] overflow-hidden relative">
+        <div class="aspect-[3/4] shrink-0 overflow-hidden relative">
           <img src="https://ttbazaar.com/cdn/shop/files/126_1b77cca5-fa43-44b4-a6f2-066b77a0cb2b.jpg?v=1760769820"
             alt="Everyday Wear - Invisible Foundations"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -546,15 +548,15 @@
             </span>
           </div>
         </div>
-        <div class="p-6">
+        <div class="p-6 flex-1 flex flex-col">
           <h4 class="font-serif text-2xl font-normal text-velora-charcoal dark:text-velora-ivory">Invisible Foundations
           </h4>
-          <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed flex-1">
             Laser-cut bonded underwear engineered to remain completely imperceptible under suiting, denim, and fine
             knitwear.
           </p>
           <a href="products.html?category=seamless"
-            class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-velora-burgundy dark:text-velora-rose hover:underline">
+            class="mt-auto pt-4 inline-flex items-center gap-1 text-xs font-semibold text-velora-burgundy dark:text-velora-rose hover:underline whitespace-nowrap">
             Shop Everyday Essentials &rarr;
           </a>
         </div>
@@ -562,9 +564,9 @@
 
       <!-- Card 2: Active Essentials -->
       <div
-        class="group luxury-card rounded-3xl overflow-hidden bg-white dark:bg-velora-charcoal border border-velora-champagne/60 dark:border-velora-burgundy/40 shadow-sm"
+        class="group luxury-card h-full flex flex-col rounded-3xl overflow-hidden bg-white dark:bg-velora-charcoal border border-velora-champagne/60 dark:border-velora-burgundy/40 shadow-sm"
         data-aos="fade-up" data-aos-delay="200">
-        <div class="aspect-[3/4] overflow-hidden relative">
+        <div class="aspect-[3/4] shrink-0 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1765045768265-e3eb8471fce3?auto=format&fit=crop&w=800&q=80"
             alt="Active Essentials"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -575,15 +577,15 @@
             </span>
           </div>
         </div>
-        <div class="p-6">
+        <div class="p-6 flex-1 flex flex-col">
           <h4 class="font-serif text-2xl font-normal text-velora-charcoal dark:text-velora-ivory">Kinetic Breathability
           </h4>
-          <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed flex-1">
             Engineered with micro-ventilation zones and 4-way elastic memory. Keeps you dry and chafe-free through
             rigorous activity.
           </p>
           <a href="products.html?gender=men"
-            class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-velora-burgundy dark:text-velora-rose hover:underline">
+            class="mt-auto pt-4 inline-flex items-center gap-1 text-xs font-semibold text-velora-burgundy dark:text-velora-rose hover:underline whitespace-nowrap">
             Shop Kinetic Innerwear &rarr;
           </a>
         </div>
@@ -591,9 +593,9 @@
 
       <!-- Card 3: Sleepwear & Rest -->
       <div
-        class="group luxury-card rounded-3xl overflow-hidden bg-white dark:bg-velora-charcoal border border-velora-champagne/60 dark:border-velora-burgundy/40 shadow-sm"
+        class="group luxury-card h-full flex flex-col rounded-3xl overflow-hidden bg-white dark:bg-velora-charcoal border border-velora-champagne/60 dark:border-velora-burgundy/40 shadow-sm"
         data-aos="fade-up" data-aos-delay="300">
-        <div class="aspect-[3/4] overflow-hidden relative">
+        <div class="aspect-[3/4] shrink-0 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1577198193421-07f394d6ecf2?auto=format&fit=crop&w=800&q=80"
             alt="Sleepwear & Rest - Restorative Nightwear"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -604,15 +606,15 @@
             </span>
           </div>
         </div>
-        <div class="p-6">
+        <div class="p-6 flex-1 flex flex-col">
           <h4 class="font-serif text-2xl font-normal text-velora-charcoal dark:text-velora-ivory">Restorative Nightwear
           </h4>
-          <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed">
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-2 leading-relaxed flex-1">
             Featherweight silk slip chemises, bias-cut camisoles, and modal-cashmere sleep pants that promote
             thermoregulated rest.
           </p>
           <a href="products.html?category=sleepwear"
-            class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-velora-burgundy dark:text-velora-rose hover:underline">
+            class="mt-auto pt-4 inline-flex items-center gap-1 text-xs font-semibold text-velora-burgundy dark:text-velora-rose hover:underline whitespace-nowrap">
             Shop Sleepwear &rarr;
           </a>
         </div>
@@ -742,24 +744,24 @@
 
       <!-- Promotional Newsletter & Loyalty CTA -->
       <div
-        class="p-8 sm:p-12 rounded-3xl glass-card border border-velora-champagne flex flex-col md:flex-row items-center justify-between gap-8"
+        class="p-8 sm:p-12 rounded-3xl glass-card border border-velora-champagne flex flex-col lg:flex-row items-center justify-between gap-8"
         data-aos="fade-up">
-        <div class="space-y-2 text-center md:text-left">
+        <div class="space-y-2 text-center lg:text-left max-w-xl">
           <span class="text-xs uppercase tracking-widest text-velora-rose font-semibold">VELORA Society</span>
           <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-velora-charcoal dark:text-velora-ivory">
             Join the Inner Circle for Private VIP Releases
           </h3>
-          <p class="text-xs text-stone-500 dark:text-stone-400 max-w-md">
+          <p class="text-xs text-stone-500 dark:text-stone-400 max-w-md mx-auto lg:mx-0 leading-relaxed">
             Members receive complimentary expedited discreet shipping, personal sizing consultations, and exclusive
             access to silk capsule collections.
           </p>
         </div>
 
-        <form class="newsletter-form flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+        <form class="newsletter-form flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-3 w-full sm:w-auto shrink-0">
           <input type="email" required placeholder="Your email address"
-            class="px-5 py-3.5 rounded-full bg-white dark:bg-[#1a181b] border border-velora-champagne text-xs focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory w-full sm:w-64" />
+            class="px-5 py-3.5 rounded-full bg-white dark:bg-[#1a181b] border border-velora-champagne text-xs focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory w-full sm:w-72 lg:w-64 xl:w-72" />
           <button type="submit"
-            class="px-8 py-3.5 rounded-full bg-velora-burgundy text-white hover:bg-[#3d1925] font-semibold text-xs uppercase tracking-widest transition shadow-md shrink-0">
+            class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-velora-burgundy text-white hover:bg-[#3d1925] font-semibold text-xs uppercase tracking-widest transition shadow-md shrink-0 whitespace-nowrap">
             Join VIP
           </button>
         </form>
@@ -774,7 +776,7 @@
   <footer class="bg-[#F3ECE3] dark:bg-velora-charcoal text-velora-charcoal dark:text-velora-ivory pt-20 pb-12 border-t border-velora-champagne dark:border-velora-burgundy/40 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-velora-champagne/80 dark:border-velora-burgundy/30">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 xl:gap-10 items-start pb-16 border-b border-velora-champagne/80 dark:border-velora-burgundy/30">
         
         <!-- Column 1: Brand Info -->
         <div class="lg:col-span-2 space-y-4">
@@ -858,7 +860,6 @@
             <li><a href="size-guide.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Interactive Size Guide</a></li>
             <li><a href="contact.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Private Concierge Support</a></li>
             <li><a href="contact.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Discreet Packaging Policy</a></li>
-            <li><a href="size-guide.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Fabric & Care Guide</a></li>
             <li><a href="contact.html" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Returns & Exchanges (30 Days)</a></li>
           </ul>
         </div>
@@ -866,13 +867,13 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-4">
-        <p>&copy; 2026 VELORA Atelier Inc. All rights reserved. High Luxury Innerwear.</p>
-        <div class="flex flex-wrap items-center justify-center gap-6">
+      <div class="pt-8 flex flex-col lg:flex-row items-center justify-between text-[11px] text-stone-600 dark:text-stone-400 gap-4">
+        <p class="whitespace-nowrap text-center lg:text-left">&copy; 2026 VELORA Atelier Inc. All rights reserved. High Luxury Innerwear.</p>
+        <div class="flex flex-wrap items-center justify-center gap-5 xl:gap-6">
           <a href="#" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Privacy Policy</a>
           <a href="#" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Terms & Conditions</a>
           <a href="#" class="hover:text-velora-burgundy dark:hover:text-velora-rose transition">Ethical Sourcing</a>
-          <span class="text-stone-500">Encrypted 256-Bit SSL Checkout</span>
+          <span class="text-stone-500 whitespace-nowrap">Encrypted 256-Bit SSL Checkout</span>
         </div>
         <!-- Back to Top Arrow in Right Corner of Footer -->
         <button
@@ -996,11 +997,15 @@
     class="drawer-panel fixed top-0 right-0 bottom-0 w-[300px] sm:w-[360px] bg-white dark:bg-velora-charcoal z-50 p-6 flex flex-col justify-between shadow-2xl border-l border-velora-champagne/40 xl:hidden">
     <div>
       <div class="flex items-center justify-between pb-6 border-b border-velora-champagne/40">
-        <div class="flex items-center gap-2">
-          <img src="assets/logo.svg" alt="VELORA" class="w-8 h-8" />
-          <span
-            class="font-serif text-xl font-bold tracking-widest text-velora-burgundy dark:text-velora-champagne">VELORA</span>
-        </div>
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-sm shrink-0">
+            <img src="assets/logo.svg" alt="VELORA Emblem" class="w-full h-full object-contain filter invert-0" />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-2xl font-semibold tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors">VELORA</span>
+            <span class="text-[9px] tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 -mt-1 font-medium">ATELIER PRIVÉ</span>
+          </div>
+        </a>
         <button id="mobile-menu-close" class="p-2 text-stone-500 hover:text-velora-rose">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
@@ -1056,13 +1061,13 @@
         </button>
       </div>
 
-            <nav class="mt-8 space-y-4 text-sm uppercase tracking-widest font-medium">
-        <a href="index.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Home 1 (Luxury Experience)</a>
-        <a href="home-2.html" class="block py-2 text-velora-burgundy dark:text-velora-rose font-bold border-b border-stone-100 dark:border-stone-800">Home 2 (Editorial Shopping)</a>
-        <a href="about.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">About VELORA</a>
-        <a href="products.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Products Catalog</a>
-        <a href="size-guide.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Interactive Size Guide</a>
-        <a href="contact.html" class="block py-2 text-velora-charcoal dark:text-velora-ivory hover:text-velora-rose border-b border-stone-100 dark:border-stone-800">Contact & Concierge</a>
+      <nav class="mt-8 space-y-2 text-sm uppercase tracking-widest font-medium">
+        <a href="index.html" class="mobile-nav-link">Home 1</a>
+        <a href="home-2.html" class="mobile-nav-link active">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="size-guide.html" class="mobile-nav-link">Size Guide</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </nav>
 
       <!-- Mobile Auth Button -->
