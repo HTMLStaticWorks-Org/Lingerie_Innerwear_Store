@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="h-full overflow-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,10 +46,10 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-velora-ivory text-velora-charcoal dark:bg-[#1a181b] dark:text-velora-ivory antialiased selection:bg-velora-rose/30 min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-x-hidden">
+<body class="bg-velora-ivory text-velora-charcoal dark:bg-[#1a181b] dark:text-velora-ivory antialiased selection:bg-velora-rose/30 h-screen w-screen overflow-hidden">
 
   <!-- Top Right Controls: RTL Toggle & Theme Toggle -->
-  <div class="w-full max-w-md flex justify-end items-center gap-2.5 mb-3 md:mb-0 md:w-auto md:max-w-none md:fixed md:top-5 md:right-5 z-50">
+  <div class="fixed top-4 right-4 sm:top-5 sm:right-5 flex items-center gap-2.5 z-50">
     <!-- RTL Toggle Button (Left-Right Arrow) -->
     <button
       id="rtl-toggle-btn"
@@ -68,11 +68,16 @@
   </div>
 
   <!-- Ambient Backdrop Gradients -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-velora-champagne/50 dark:bg-velora-burgundy/20 filter blur-3xl opacity-70 pointer-events-none"></div>
-  <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-velora-rose/20 dark:bg-velora-rose/10 filter blur-3xl opacity-60 pointer-events-none"></div>
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-velora-champagne/50 dark:bg-velora-burgundy/20 filter blur-3xl opacity-70"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-velora-rose/20 dark:bg-velora-rose/10 filter blur-3xl opacity-60"></div>
+  </div>
 
-  <!-- Centered Authentication Card -->
-  <div class="w-full max-w-md bg-white dark:bg-[#201d22] border border-velora-champagne/70 dark:border-velora-burgundy/40 rounded-3xl p-8 sm:p-10 shadow-2xl relative z-10 space-y-6 md:my-auto">
+  <!-- Fixed Viewport Container -->
+  <main class="fixed inset-0 w-full h-full overflow-y-auto flex items-center justify-center p-4 z-10">
+
+    <!-- Centered Authentication Card -->
+    <div class="w-full max-w-md bg-white dark:bg-[#201d22] border border-velora-champagne/70 dark:border-velora-burgundy/40 rounded-3xl p-5 sm:p-6 shadow-2xl relative z-10 space-y-3 my-auto">
     
     <!-- Centered Brand Logo & Name (Side by Side) -->
     <div class="flex justify-center">
@@ -272,7 +277,8 @@
       </a>
     </div>
 
-  </div>
+    </div>
+  </main>
 
   <!-- Scripts -->
   <script src="js/products-data.js"></script>

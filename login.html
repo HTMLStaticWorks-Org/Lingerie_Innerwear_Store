@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="h-full overflow-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,10 +46,10 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-velora-ivory text-velora-charcoal dark:bg-[#1a181b] dark:text-velora-ivory antialiased selection:bg-velora-rose/30 min-h-screen md:h-screen md:overflow-hidden flex flex-col items-center justify-center p-4 sm:p-5 relative overflow-x-hidden">
+<body class="bg-velora-ivory text-velora-charcoal dark:bg-[#1a181b] dark:text-velora-ivory antialiased selection:bg-velora-rose/30 h-screen w-screen overflow-hidden">
 
   <!-- Top Right Controls: RTL Toggle & Theme Toggle -->
-  <div class="w-full max-w-md flex justify-end items-center gap-2.5 mb-3 md:mb-0 md:w-auto md:max-w-none md:fixed md:top-5 md:right-5 z-50">
+  <div class="fixed top-4 right-4 sm:top-5 sm:right-5 flex items-center gap-2.5 z-50">
     <!-- RTL Toggle Button (Left-Right Arrow) -->
     <button
       id="rtl-toggle-btn"
@@ -68,42 +68,47 @@
   </div>
 
   <!-- Ambient Backdrop Gradients -->
-  <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-velora-champagne/50 dark:bg-velora-burgundy/20 filter blur-3xl opacity-70 pointer-events-none"></div>
-  <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-velora-rose/20 dark:bg-velora-rose/10 filter blur-3xl opacity-60 pointer-events-none"></div>
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-velora-champagne/50 dark:bg-velora-burgundy/20 filter blur-3xl opacity-70"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-velora-rose/20 dark:bg-velora-rose/10 filter blur-3xl opacity-60"></div>
+  </div>
 
-  <!-- Centered Authentication Card -->
-  <div class="w-full max-w-md bg-white dark:bg-[#201d22] border border-velora-champagne/70 dark:border-velora-burgundy/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative z-10 space-y-4 md:my-auto">
+  <!-- Fixed Viewport Container -->
+  <main class="fixed inset-0 w-full h-full overflow-hidden flex items-center justify-center p-4 z-10">
+
+    <!-- Centered Authentication Card -->
+    <div class="w-full max-w-md bg-white dark:bg-[#201d22] border border-velora-champagne/70 dark:border-velora-burgundy/40 rounded-3xl p-5 sm:p-7 shadow-2xl relative z-10 space-y-3.5">
     
     <!-- Centered Brand Logo & Name (Side by Side) -->
     <div class="flex justify-center">
       <a href="index.html" class="inline-flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
+        <div class="w-9 h-9 rounded-full flex items-center justify-center p-1 bg-gradient-to-tr from-velora-burgundy via-velora-rose to-velora-champagne shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
           <img src="assets/logo.svg" alt="VELORA Emblem" class="w-full h-full object-contain" />
         </div>
         <div class="flex flex-col text-left rtl:text-right">
-          <span class="font-serif text-2xl font-semibold tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors">VELORA</span>
+          <span class="font-serif text-xl sm:text-2xl font-semibold tracking-[0.22em] text-velora-burgundy dark:text-velora-champagne transition-colors">VELORA</span>
           <span class="text-[9px] tracking-[0.35em] uppercase text-velora-rose dark:text-velora-champagne/70 -mt-1 font-medium">ATELIER PRIVÉ</span>
         </div>
       </a>
     </div>
 
     <!-- Header Text -->
-    <div class="text-center space-y-1">
+    <div class="text-center space-y-0.5">
       <span class="text-[10px] uppercase tracking-[0.25em] text-velora-rose font-semibold">Welcome Back</span>
       <h1 class="font-serif text-2xl sm:text-3xl font-normal text-velora-charcoal dark:text-velora-ivory leading-tight">
         Sign In to Atelier Privé
       </h1>
-      <p class="text-xs text-stone-500 dark:text-stone-400">
+      <p class="text-[11px] sm:text-xs text-stone-500 dark:text-stone-400">
         Access your curated sizes, intimate wardrobe, and private order concierge.
       </p>
     </div>
 
     <!-- Login Form -->
-    <form id="login-form" class="space-y-3" onsubmit="event.preventDefault(); showToast('Welcome back to VELORA Atelier Privé.', 'success'); setTimeout(() => { window.location.href = 'index.html'; }, 1200);">
+    <form id="login-form" class="space-y-2.5" onsubmit="event.preventDefault(); showToast('Welcome back to VELORA Atelier Privé.', 'success'); setTimeout(() => { window.location.href = 'index.html'; }, 1200);">
       
       <!-- Email Input -->
       <div>
-        <label for="login-email" class="block text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
+        <label for="login-email" class="block text-[11px] font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-1">
           Email Address
         </label>
         <div class="relative">
@@ -112,16 +117,16 @@
             id="login-email"
             required
             placeholder="claire@atelier-velora.com"
-            class="w-full px-4 py-2.5 pl-11 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-velora-champagne/60 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory transition"
+            class="w-full px-4 py-2 pl-10 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-velora-champagne/60 dark:border-stone-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory transition"
           />
-          <i data-lucide="mail" class="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+          <i data-lucide="mail" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
         </div>
       </div>
 
       <!-- Password Input with Toggle -->
       <div>
         <div class="flex items-center justify-between mb-1">
-          <label for="login-password" class="block text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300">
+          <label for="login-password" class="block text-[11px] font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300">
             Password
           </label>
           <a href="#" onclick="event.preventDefault(); showToast('Password reset link sent to your registered email.', 'info');" class="text-[11px] text-velora-rose hover:underline font-medium">
@@ -134,13 +139,13 @@
             id="login-password"
             required
             placeholder="••••••••••••"
-            class="w-full px-4 py-2.5 pl-11 pr-11 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-velora-champagne/60 dark:border-stone-700 text-sm focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory transition"
+            class="w-full px-4 py-2 pl-10 pr-10 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-velora-champagne/60 dark:border-stone-700 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-velora-rose text-velora-charcoal dark:text-velora-ivory transition"
           />
-          <i data-lucide="lock" class="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+          <i data-lucide="lock" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
           <button
             type="button"
             onclick="const p = document.getElementById('login-password'); p.type = p.type === 'password' ? 'text' : 'password';"
-            class="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-velora-charcoal dark:hover:text-velora-ivory transition p-1 cursor-pointer"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-velora-charcoal dark:hover:text-velora-ivory transition p-1 cursor-pointer"
             title="Toggle Password Visibility">
             <i data-lucide="eye" class="w-4 h-4"></i>
           </button>
@@ -150,7 +155,7 @@
       <!-- Remember Me -->
       <div class="flex items-center justify-between pt-0.5">
         <label class="flex items-center gap-2 cursor-pointer text-xs text-stone-500 dark:text-stone-400">
-          <input type="checkbox" checked class="w-4 h-4 rounded text-velora-burgundy focus:ring-velora-rose border-stone-300 dark:border-stone-600" />
+          <input type="checkbox" checked class="w-3.5 h-3.5 rounded text-velora-burgundy focus:ring-velora-rose border-stone-300 dark:border-stone-600" />
           <span>Remember this device for 30 days</span>
         </label>
       </div>
@@ -159,28 +164,28 @@
       <div class="pt-1">
         <button
           type="submit"
-          class="w-full py-3 px-6 rounded-full bg-velora-burgundy text-white hover:bg-velora-rose dark:bg-velora-rose dark:text-velora-charcoal dark:hover:bg-velora-champagne font-semibold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group cursor-pointer">
+          class="w-full py-2.5 px-6 rounded-full bg-velora-burgundy text-white hover:bg-velora-rose dark:bg-velora-rose dark:text-velora-charcoal dark:hover:bg-velora-champagne font-semibold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group cursor-pointer">
           <span>Enter Atelier Privé</span>
         </button>
       </div>
     </form>
 
     <!-- Divider (OR CONTINUE WITH) -->
-    <div class="relative flex items-center justify-center my-3">
+    <div class="relative flex items-center justify-center my-2">
       <div class="border-t border-stone-200 dark:border-stone-700 w-full"></div>
       <span class="bg-white dark:bg-[#201d22] px-3 text-[10px] uppercase tracking-wider text-stone-400 shrink-0 font-medium">Or continue with</span>
       <div class="border-t border-stone-200 dark:border-stone-700 w-full"></div>
     </div>
 
     <!-- Social Logins (Icon-Only with Hover Effects: Apple, Facebook, Google) -->
-    <div class="flex items-center justify-center gap-4">
+    <div class="flex items-center justify-center gap-3.5">
       <!-- Apple -->
       <button
         type="button"
         onclick="showToast('Apple Single Sign-On initialized.', 'info')"
-        class="w-12 h-12 rounded-2xl flex items-center justify-center border border-stone-200 dark:border-stone-700 bg-stone-50/70 dark:bg-stone-800/40 text-velora-charcoal dark:text-velora-ivory hover:text-black dark:hover:text-white hover:border-velora-burgundy dark:hover:border-velora-rose hover:bg-white dark:hover:bg-stone-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+        class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center border border-stone-200 dark:border-stone-700 bg-stone-50/70 dark:bg-stone-800/40 text-velora-charcoal dark:text-velora-ivory hover:text-black dark:hover:text-white hover:border-velora-burgundy dark:hover:border-velora-rose hover:bg-white dark:hover:bg-stone-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 group cursor-pointer"
         title="Sign in with Apple">
-        <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
           <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 3.5c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.07 1.72-.94 2.73 1 .08 2.03-.48 2.65-1.23z"/>
         </svg>
       </button>
@@ -189,9 +194,9 @@
       <button
         type="button"
         onclick="showToast('Facebook Single Sign-On initialized.', 'info')"
-        class="w-12 h-12 rounded-2xl flex items-center justify-center border border-stone-200 dark:border-stone-700 bg-stone-50/70 dark:bg-stone-800/40 text-[#1877F2] hover:border-[#1877F2] hover:bg-white dark:hover:bg-stone-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+        class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center border border-stone-200 dark:border-stone-700 bg-stone-50/70 dark:bg-stone-800/40 text-[#1877F2] hover:border-[#1877F2] hover:bg-white dark:hover:bg-stone-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 group cursor-pointer"
         title="Sign in with Facebook">
-        <svg class="w-5 h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
         </svg>
       </button>
@@ -200,9 +205,9 @@
       <button
         type="button"
         onclick="showToast('Google Single Sign-On initialized.', 'info')"
-        class="w-12 h-12 rounded-2xl flex items-center justify-center border border-stone-200 dark:border-stone-700 bg-stone-50/70 dark:bg-stone-800/40 hover:border-velora-burgundy dark:hover:border-velora-rose hover:bg-white dark:hover:bg-stone-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group cursor-pointer"
+        class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center border border-stone-200 dark:border-stone-700 bg-stone-50/70 dark:bg-stone-800/40 hover:border-velora-burgundy dark:hover:border-velora-rose hover:bg-white dark:hover:bg-stone-800 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 group cursor-pointer"
         title="Sign in with Google">
-        <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
           <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
           <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
           <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
@@ -212,14 +217,15 @@
     </div>
 
     <!-- Bottom Redirect -->
-    <div class="text-center pt-3 border-t border-velora-champagne/40 text-xs text-stone-500 dark:text-stone-400">
+    <div class="text-center pt-2.5 border-t border-velora-champagne/40 text-xs text-stone-500 dark:text-stone-400">
       New to VELORA Atelier?
       <a href="signup.html" class="font-semibold text-velora-burgundy dark:text-velora-rose hover:underline ml-1">
         Create an Account
       </a>
     </div>
 
-  </div>
+    </div>
+  </main>
 
   <!-- Scripts -->
   <script src="js/products-data.js"></script>
